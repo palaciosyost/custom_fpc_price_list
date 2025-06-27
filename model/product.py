@@ -23,4 +23,7 @@ class SaleOrderLine(models.Model):
             'view_mode': 'tree',
             'target': 'new',
             'domain': [('product_id', '=', self.product_template_id.id)],
+            'context': {
+                'default_product_id': self.product_template_id.id,
+            },
         }

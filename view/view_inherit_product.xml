@@ -10,6 +10,7 @@
                     <field name="precio_lista">
                         <tree editable="bottom">
                             <field name="fecha_registro"/>
+                            <field name="cliente"/>
                             <field name="moneda_id"/>
                             <field name="precio_unitario"/>
                         </tree>

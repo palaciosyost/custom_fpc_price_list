@@ -13,9 +13,9 @@ class ListaPrecio(models.Model):
     moneda_id = fields.Many2one(
         "res.currency", string="Moneda"
     )
-
+    cliente = fields.Many2one("res.partner", string="Competencia")
     product_id = fields.Many2one(
-        "product.template", string="Producto"
+        "product.template", string="Producto", default=lambda self: self.env.context.get('default_product_id')
     )
 
     precio_unitario = fields.Float(
