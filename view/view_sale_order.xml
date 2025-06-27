@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="inherit_sale_order_line_tree" model="ir.ui.view">
+        <field name="name">sale.order.tree.inherit.edit.price</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='order_line']/tree/field[@name='price_unit']" position="after">
+                <button name="action_open_precio_wizard" type="object" string="👁" class="btn-link"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_price_product_list_tree" model="ir.ui.view">
+        <field name="name">price.product.list.tree</field>
+        <field name="model">price.product.list</field>
+        <field name="arch" type="xml">
+            <tree string="Historial de Precios" editable="bottom">
+                <field name="fecha_registro"/>
+                <field name="moneda_id"/>
+                <field name="product_id"/>
+                <field name="precio_unitario"/>
+            </tree>
+        </field>
+    </record>
+</odoo>
