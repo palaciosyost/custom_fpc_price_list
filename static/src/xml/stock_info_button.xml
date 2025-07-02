@@ -1,0 +1,12 @@
+<templates xml:space="preserve">
+  <t t-name="custom_stock_forecast_widget" owl="1">
+    <div class="o_stock_widget">
+        <i class="fa fa-line-chart text-danger" role="button" t-on-click="togglePopup"/>
+        <div t-if="state.show" class="o_stock_popup shadow p-2 bg-white border">
+            <p><strong>Existencias pronosticadas:</strong> <t t-esc="state.forecast"/></p>
+            <p><strong>Disponible:</strong> <t t-esc="state.available"/></p>
+            <p><strong>Fecha:</strong> <t t-esc="state.date"/></p>
+        </div>
+    </div>
+  </t>
+</templates>
