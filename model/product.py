@@ -17,7 +17,7 @@ class SaleOrderLine(models.Model):
 
     def action_open_precio_wizard(self):
         return {
-            'name': 'Historial de Precios',
+            'name': f'Historial de Precios / {self.product_template_id.default_code}',
             'type': 'ir.actions.act_window',
             'res_model': 'price.product.list',
             'view_mode': 'tree',
