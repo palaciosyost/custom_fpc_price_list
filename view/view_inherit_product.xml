@@ -26,7 +26,12 @@
         <field name="inherit_id" ref="product.product_template_kanban_view"/>
         <field name="arch" type="xml">
             <xpath expr="//strong[@class='o_kanban_record_title']"  position="after">
-                <button groups="custom_fpc_price_list.group_view_historial" name="action_open_precio_wizard" context="{'default_product_id': active_id}" type="object" icon="fa-eye" class="btn-link"/>
+                <button name="action_open_precio_wizard" context="{'default_product_id': active_id}" type="object"  class="btn-link">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
+                        <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0"/>
+                        <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8m8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7"/>
+                        </svg>
+                </button>
 
             </xpath>
         </field>
