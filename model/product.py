@@ -11,14 +11,15 @@ class ProductPrice(models.Model):
 
     def action_open_precio_wizard(self):
         return {
-            'name': 'Historial de Precios / ',
+
+            'name': f'Historial de Precios / {self.default_code}',
             'type': 'ir.actions.act_window',
             'res_model': 'price.product.list',
             'view_mode': 'tree',
             'target': 'new',
-            'domain': [('product_id', '=', self.product_template_id.id)],
+            'domain': [('product_id', '=', self.id)],
             'context': {
-                'default_product_id': self.product_template_id.id,
+                'default_product_id': self.id,
             },
         }
 
@@ -28,7 +29,8 @@ class SaleOrderLine(models.Model):
 
     def action_open_precio_wizard(self):
         return {
-            'name': 'Historial de Precios / ',
+
+            'name': f'Historial de Precios / {self.product_template_id.default_code}',
             'type': 'ir.actions.act_window',
             'res_model': 'price.product.list',
             'view_mode': 'tree',
