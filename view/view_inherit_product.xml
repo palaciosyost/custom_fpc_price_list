@@ -19,4 +19,19 @@
             </xpath>
         </field>
     </record>
+
+    <record id="view_kanban_price_product_inherit" model="ir.ui.view">
+        <field name="name">product.template.price.kanban.inherit</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_kanban_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//strong[@class='o_kanban_record_title']"  position="after">
+                <button groups="custom_fpc_price_list.group_view_historial" name="action_open_precio_wizard" context="{'default_product_id': active_id}" type="object" icon="fa-eye" class="btn-link"/>
+
+            </xpath>
+        </field>
+    </record>
+
+
+
 </odoo>

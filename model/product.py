@@ -9,7 +9,18 @@ class ProductPrice(models.Model):
         "price.product.list", "product_id", string="Historail de precios"
     )
 
-
+    def action_open_precio_wizard(self):
+        return {
+            'name': 'Historial de Precios / ',
+            'type': 'ir.actions.act_window',
+            'res_model': 'price.product.list',
+            'view_mode': 'tree',
+            'target': 'new',
+            'domain': [('product_id', '=', self.product_template_id.id)],
+            'context': {
+                'default_product_id': self.product_template_id.id,
+            },
+        }
 
 
 class SaleOrderLine(models.Model):
@@ -17,7 +28,7 @@ class SaleOrderLine(models.Model):
 
     def action_open_precio_wizard(self):
         return {
-            'name': 'Historial de Precios',
+            'name': 'Historial de Precios / ',
             'type': 'ir.actions.act_window',
             'res_model': 'price.product.list',
             'view_mode': 'tree',
