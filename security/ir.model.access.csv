@@ -1,3 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_price_product_list,access.price.product.list,model_price_product_list,base.group_user,1,1,1,1
 access_wizard_stock_info,wizard.stock.info,model_wizard_stock_info,base.group_user,1,1,1,1
+access_price_product_list_wizard,access.price.product.list.wizard,model_price_product_list_wizard,,1,1,1,1
