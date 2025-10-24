@@ -65,7 +65,8 @@ class WizardStockInfo(models.TransientModel):
             product = self.env['product.product'].browse(product_id)
             quants = self.env['stock.quant'].search([
                 ('product_id', '=', product.id),
-                ('quantity', '>', 0)
+                ('quantity', '>', 0),
+                ("location_id.usage", "=", "internal")
             ])
             html = "<div><h5>Stock del producto</h5><ul>"
             total = 0
