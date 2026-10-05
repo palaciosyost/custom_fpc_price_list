@@ -13,7 +13,7 @@ Módulo para registrar manualmente precios que ofrece la competencia en producto
     "author": "FPC Technology",
     "website": "https://fpc-technology.com/",
     "license": "LGPL-3",
-    "depends": ["base", "stock", "sale", "product", "custom_fpc_stock_ubicacion"],
+    "depends": ["base", "stock", "sale", "product"],
     "data": [
         "security/ir.model.access.csv",
         "view/view_inherit_product.xml",

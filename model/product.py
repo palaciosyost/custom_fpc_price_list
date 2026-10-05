@@ -43,9 +43,5 @@ class WizardStockInfo(models.TransientModel):
                 html += f"<li>{q.location_id.display_name}: {q.quantity}</li>"
                 total += q.quantity
             html += f"</ul><strong>Total: {total}</strong></div>"
-            html += f"<br/><div><h5>Ubicación del producto</h5><ul>" if product.tab_localizacion else ''
-            for tab in product.tab_localizacion:                    
-                html += f"<li><strong>Estante:</strong> {tab.estante.name} / <strong>Fila:</strong> {tab.fila.name}</li>"
-                html += "</ul></div>"
             res['stock_html'] = html
         return res
