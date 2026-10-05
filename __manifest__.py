@@ -16,7 +16,6 @@ Módulo para registrar manualmente precios que ofrece la competencia en producto
     "depends": ["base", "stock", "sale", "product"],
     "data": [
         "security/ir.model.access.csv",
-        "view/view_inherit_product.xml",
         "view/view_sale_order.xml",
     ],
     "assets": {
