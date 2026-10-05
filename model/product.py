@@ -1,41 +1,10 @@
 from odoo import models, fields, api, _
 
 
-class ProductPrice(models.Model):
-    _inherit = "product.template"
-    _description = "Precios producto"
-
-    precio_lista = fields.One2many(
-        "price.product.list", "product_id", string="Historail de precios"
-    )
-
-    def action_open_precio_wizard(self):
-        return {
-            'name': f'Historial de Precios / {self.default_code}',
-            'type': 'ir.actions.act_window',
-            'res_model': 'price.product.list.wizard',
-            'view_mode': 'form',
-            'target': 'new',
-            'context': {
-                'default_product_id': self.id,
-            },
-        }
 
 
 class SaleOrderLine(models.Model):
     _inherit = 'sale.order.line'
-
-    def action_open_precio_wizard(self):
-        return {
-            'name': f'Historial de Precios / {self.product_template_id.default_code}',
-            'type': 'ir.actions.act_window',
-            'res_model': 'price.product.list.wizard',
-            'view_mode': 'form',
-            'target': 'new',
-            'context': {
-                'default_product_id': self.product_template_id.id,
-            },
-        }
 
     def action_open_stock_wizard(self):
         self.ensure_one()

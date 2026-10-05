@@ -15,11 +15,9 @@ Módulo para registrar manualmente precios que ofrece la competencia en producto
     "license": "LGPL-3",
     "depends": ["base", "stock", "sale", "product", "custom_fpc_stock_ubicacion"],
     "data": [
-        "security/security.xml",
         "security/ir.model.access.csv",
         "view/view_inherit_product.xml",
         "view/view_sale_order.xml",
-        "view/view_historial_precio.xml",
     ],
     "assets": {
         "web.assets_backend": [
