@@ -14,9 +14,6 @@
                     icon="fa-cubes"
                     class="btn btn-link"/>
             </xpath>
-            <xpath expr="//field[@name='order_line']/list/field[@name='price_unit']" position="after">
-                <button groups="custom_fpc_price_list.group_view_historial" name="action_open_precio_wizard" context="{'default_product_id': active_id}" type="object" icon="fa-eye" class="btn-link"/>
-            </xpath>
         </field>
     </record>
 
